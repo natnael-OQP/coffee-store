@@ -1,3 +1,6 @@
+html,body{
+    background: #1A1C2C;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
