@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Card from '../components/card'
+import coffeeStoreData from '../data/coffee-store.json'
 
-export default function Home() {
+function Home({coffeeStore}) {
   return (
     <div  className="" >
       <Head>
@@ -24,22 +25,44 @@ export default function Home() {
         <h1 className="max-w-6xl pt-20 pb-10 text-3xl md:text-4xl font-semibold " >Addise Abeba</h1>
         {/* card components */}
         <div className="max-w-6xl pl-5 sm:pl-0 mx-auto w-full  grid grid-cols-1 sm:grid-cols-2 overflow-hidden lg:grid-cols-3 gap-4 " >
-          <Card
-            img="/images/bg-2.jpeg"
-            title="Background"
-          />
+          {
+            coffeeStore.map((item) => (
+              <Card
+                id={item.id}
+                key={item?.id}
+                img={item?.imgUrl}
+                title={item?.name}
+              />
+            ))
+          }
         </div>
         {/* section 2 */}
         <h1 className="max-w-6xl pt-20 pb-10 text-3xl md:text-4xl font-semibold " >Addise Abeba</h1>
         {/* card components */}
         <div className="max-w-6xl pl-5 sm:pl-0 mx-auto w-full  grid grid-cols-1 sm:grid-cols-2 overflow-hidden lg:grid-cols-3 gap-4 " >
-          <Card
-            img="/images/bg-2.jpeg"
-            title="Background"
-          />
+          {
+            coffeeStore.map((item) => (
+              <Card
+                id={item.id}
+                key={item?.id}
+                img={item?.imgUrl}
+                title={item?.name}
+              />
+            ))
+          }
         </div>
         
       </main>
     </div>
   )
 }
+
+export async function getStaticProps() {
+  return {
+    props: {
+      coffeeStore:coffeeStoreData,
+    }
+  }
+} 
+
+export default  Home;
