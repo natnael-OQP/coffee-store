@@ -6,7 +6,7 @@ import { fetcher } from '../lib/fetcher'
 
 
 function Home({ photos }) {
-  console.log(photos);
+  
   return (
     <div  className="" >
       <Head>
