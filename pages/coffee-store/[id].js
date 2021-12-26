@@ -42,14 +42,14 @@ const Coffee = ({ photo: {alt_description, description, urls:{regular}, user:{us
             <Head>
                 <title>{ alt_description || description }</title> 
             </Head>
-            <div className="px-10 pb-28 justify-center sm:px-20 flex flex-col gap-y-3 w-full min-h-screen bg-gradient-to-bl from-green-600 via-slate-700 to-sky-900" >
+            <div className="px-10 pb-5 justify-center sm:px-20 flex flex-col gap-y-3 w-full min-h-screen bg-gradient-to-bl from-green-600 via-slate-700 to-sky-900" >
                 <Link href="/" >
                     <a className=" select-none text-sm hover:-translate-x-2 transform ease-in-out transition duration-200 font-bold space-x-2 flex " > <ChevronLeftIcon className="h-5 w-5 text-black" /> Back to home</a>
                 </Link>
-                <h1 className="select-none text-3xl text-white font-semibold font-mono " >{description || alt_description }</h1>
+                <h1 className="select-none text-2xl text-white font-semibold font-mono " >{description || alt_description }</h1>
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 " >
                     {/*--------image ------------*/}
-                    <div className="relative rounded-xl overflow-hidden w-full h-60 sm:w-96  sm:h-52 md:w-[600px] md:h-[300px]  " >
+                    <div className="relative rounded-xl overflow-hidden w-full h-60 sm:w-96  sm:h-52 md:w-[700px] md:h-[400px]  " >
                         <Image objectFit="cover " layout="fill" src={regular} alt={alt_description} />
                     </div>
                     <div className=" px-4 py-2 bg-opacity-20 hover:bg-opacity-40  bg-clip-padding backdrop-filter backdrop-blur-sm cursor-pointer w-full sm:w-[300px] h-[150px]    rounded-xl bg-gray-200 " >
@@ -86,7 +86,7 @@ export async function getStaticPaths() {
     }))
     return { 
         paths,
-        fallback: true      
+        fallback: false      
     };
 }
 
