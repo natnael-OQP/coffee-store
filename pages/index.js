@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import Card from "../components/card";
-import coffeeStoreData from "../data/coffee-store.json";
 import { fetcher } from "../lib/fetcher";
 
 function Home({ photos }) {

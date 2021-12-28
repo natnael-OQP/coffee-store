@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useRouter } from 'next/router'
 import Image from 'next/image';
-import coffeeStoreData from '../../data/coffee-store.json';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import Link from 'next/link'
