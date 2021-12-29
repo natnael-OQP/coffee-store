@@ -36,7 +36,11 @@ function Home({ photos }) {
 							id={photo?.id}
 							key={photo?.id}
 							img={photo?.urls?.regular}
-							name={photo?.alt_description || photo?.bio}
+							name={
+								photo?.alt_description ||
+								photo?.bio ||
+								photo?.user.username
+							}
 						/>
 					))}
 				</div>
